@@ -49,6 +49,7 @@ function! s:AddGitignoreToWildignore(gitpath, isRoot)
 	endfor
 
 	let ignorePatterns = substitute(ignorePatterns, '^,', '', 'g')
+	let ignorePatterns = substitute(ignorePatterns, ' ', '\\ ', 'g')
 
 	execute 'set wildignore+=' . ignorePatterns
 endfunction
